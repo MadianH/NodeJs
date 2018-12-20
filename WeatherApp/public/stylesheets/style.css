@@ -1,0 +1,86 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.fa-times-circle {
+  font-size: 16px;
+  color: #DFA726;
+}
+
+.clear {
+  background-image: url('../images/sun.jpeg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.few{
+  background-image: url('../images/few.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.cloudy{
+  background-image: url('../images/cloudy.jpeg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.broken{
+  background-image: url('../images/cloudy.jpeg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.shower-rain{
+  background-image: url('../images/rain.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.rainbow{
+  background-image: url('../images/rain.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.thunder{
+  background-image: url('../images/thunder.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.snow{
+  background-image: url('../images/snow.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.mist{
+  background-image: url('../images/mist.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.night{
+  background-image: url('../images/night.jpeg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#map {
+  height: 100%;
+  height: 400px;
+}
