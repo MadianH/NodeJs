@@ -13,9 +13,9 @@ var userModel = mongoose.model('user', userSchema);
 
 router.post('/signup', function(req, res, next) {
 
+  let emailInspect = req.body.email;
   let atExist = false;
   let atValid = false;
-  let emailInspect = req.body.email;
   let isExist = false;
 
   if(emailInspect.indexOf("@") < 0){
