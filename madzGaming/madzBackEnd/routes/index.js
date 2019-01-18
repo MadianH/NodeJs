@@ -85,50 +85,55 @@ const passwordIsValid = password => {
 
 router.post('/signup', function(req, res, next) {
 
-  let isExist = false;
-  let readyToDb = false
+  sendEmail(req.body.email)
 
-  if(!pseudoIsValid(req.body.pseudo)){
-    res.json({ pseudoValid: false});
-  }
-  else if(!passwordIsValid(req.body.password)){
-    res.json({ passwordValid: false});
-  }else{
-    readyToDb = true
-  }
-
-  if (readyToDb) {
-    userModel.find(
-      { email: req.body.email } ,
-      function (err, users) {
-        if (users.length == 0) {
-          var newUser = new userModel ({
-            pseudo: req.body.pseudo,
-            email: req.body.email,
-            password: req.body.password,
-          });
-          newUser.save(
-            function(error, user) {
-              if (err){
-                res.json({
-                  signup : false,
-                  result : err
-                })
-              } else {
-                res.json({
-                  signup : true,
-                  result : user,
-                })
-              }
-          });
-        }
-        else if (users.length > 0){
-          isExist = true
-          res.json({ isExist });
-        }
-      }
-    )
-  }
+  // let isExist = false;
+  // let readyToDb = false
+  //
+  // if(!pseudoIsValid(req.body.pseudo)){
+  //   res.json({ pseudoValid: false});
+  // }
+  // else if(!passwordIsValid(req.body.password)){
+  //   res.json({ passwordValid: false});
+  // }else{
+  //   readyToDb = true
+  // }
+  //
+  // if (readyToDb) {
+  //   userModel.find(
+  //     { email: req.body.email } ,
+  //     function (err, users) {
+  //       if (users.length == 0) {
+  //         var newUser = new userModel ({
+  //           pseudo: req.body.pseudo,
+  //           email: req.body.email,
+  //           password: req.body.password,
+  //         });
+  //         newUser.save(
+  //           function(error, user) {
+  //             if (err){
+  //               res.json({
+  //                 signup : false,
+  //                 result : err
+  //               })
+  //             } else {
+  //               console.log('ID',user._id);
+  //               console.log('email',user.email);
+  //
+  //               res.json({
+  //                 signup : true,
+  //                 result : user,
+  //               })
+  //             }
+  //         });
+  //       }
+  //       else if (users.length > 0){
+  //         isExist = true
+  //         res.json({ isExist });
+  //       }
+  //     }
+  //   )
+  // }
 });
 
 module.exports = router;
