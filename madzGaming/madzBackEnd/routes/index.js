@@ -89,6 +89,7 @@ router.post('/signup', function(req, res, next) {
   let readyToDb = false;
 
 
+
   if(!pseudoIsValid(req.body.pseudo)){
     res.json({ pseudoValid: false});
   }
